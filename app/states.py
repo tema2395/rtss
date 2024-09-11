@@ -7,6 +7,7 @@ class MainStates(StatesGroup):
     faq_state = State()
     supp_state = State()
     contacts_state = State()
+    send_contact = State()
     
     
 class ContactStates(StatesGroup):

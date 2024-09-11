@@ -8,7 +8,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 
-from handlers import start, obj_info, faq, contacts
+from handlers import start, obj_info, faq, contacts, call_supp
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
@@ -22,6 +22,7 @@ dp.include_router(start.router)
 dp.include_router(obj_info.router)
 dp.include_router(faq.router)
 dp.include_router(contacts.router)
+dp.include_router(call_supp.router)
 
 
 async def main():

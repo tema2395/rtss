@@ -15,7 +15,7 @@ def get_contacts_kb():
         types.InlineKeyboardButton(text="Социальные сети", callback_data="social_network_callback"),
     )
     builder.row(
-        types.InlineKeyboardButton(text="Адрес", callback_data="address"),
+        types.InlineKeyboardButton(text="Адрес", callback_data="address_callback"),
     )
     builder.row(
         types.InlineKeyboardButton(text="◀️ Назад", callback_data="back")

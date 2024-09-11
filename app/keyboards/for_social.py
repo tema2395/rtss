@@ -6,16 +6,16 @@ def get_social_kb():
     builder = InlineKeyboardBuilder()
     
     builder.add(
-        types.InlineKeyboardButton(text="Номер телефона", callback_data="number_callback"),
+        types.InlineKeyboardButton(text="Вконтакте", url="https://vk.com/vahta.rtss"),
     )
     builder.row(
-        types.InlineKeyboardButton(text="Сайт компании", callback_data="site_callback"),
+        types.InlineKeyboardButton(text="Инстаграм (запрещен в РФ)", url="https://www.instagram.com/rtss_ru?igsh=MW55MjdpZ3d2OHRmNw%3D%3D&utm_source=qr"),
     )
     builder.row(
-        types.InlineKeyboardButton(text="Социальные сети", callback_data="social_network_callback"),
+        types.InlineKeyboardButton(text="Телеграм", url="https://t.me/GK_RT_SS"),
     )
     builder.row(
-        types.InlineKeyboardButton(text="Адрес", callback_data="address"),
+        types.InlineKeyboardButton(text="YouTube", url="https://goo.su/EnyrxK"),
     )
     builder.row(
         types.InlineKeyboardButton(text="◀️ Назад", callback_data="back")
