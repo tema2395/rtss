@@ -15,7 +15,7 @@ router = Router()
 
 @router.callback_query(F.data == "contacts_callback")
 async def main_object_info(callback: types.CallbackQuery, state: FSMContext):
-    await callback.message.edit_text(text="Наши контакты", reply_markup=get_contacts_kb())
+    await callback.message.edit_text(text="Наши контактные данные", reply_markup=get_contacts_kb())
     await state.set_state(MainStates.contacts_state)
     
 
@@ -27,7 +27,7 @@ async def give_number(callback: types.CallbackQuery, state: FSMContext):
     
 @router.callback_query(F.data == "back", StateFilter(ContactStates.numb_state))
 async def go_back_to_contacts(callback: types.CallbackQuery, state: FSMContext):
-    await callback.message.edit_text(text="Наши контакты", reply_markup=get_contacts_kb())
+    await callback.message.edit_text(text="Наши контактные данные", reply_markup=get_contacts_kb())
     await state.set_state(MainStates.contacts_state)
     
     
@@ -39,7 +39,7 @@ async def give_site(callback: types.CallbackQuery, state: FSMContext):
 
 @router.callback_query(F.data == "back", StateFilter(ContactStates.site_state))
 async def go_back_to_contacts(callback: types.CallbackQuery, state: FSMContext):
-    await callback.message.edit_text(text="Наши контакты", reply_markup=get_contacts_kb())
+    await callback.message.edit_text(text="Наши контактные данные", reply_markup=get_contacts_kb())
     await state.set_state(MainStates.contacts_state)
     
     
@@ -51,7 +51,7 @@ async def give_social_contact(callback: types.CallbackQuery, state: FSMContext):
 
 @router.callback_query(F.data == "back", StateFilter(ContactStates.social_state))
 async def go_back_to_contacts(callback: types.CallbackQuery, state: FSMContext):
-    await callback.message.edit_text(text="Наши контакты", reply_markup=get_contacts_kb())
+    await callback.message.edit_text(text="Наши контактные данные", reply_markup=get_contacts_kb())
     await state.set_state(MainStates.contacts_state)
     
 
@@ -63,7 +63,7 @@ async def give_address(callback: types.CallbackQuery, state: FSMContext):
 
 @router.callback_query(F.data == "back", StateFilter(ContactStates.address_state))
 async def go_back_to_contacts(callback: types.CallbackQuery, state: FSMContext):
-    await callback.message.edit_text(text="Наши контакты", reply_markup=get_contacts_kb())
+    await callback.message.edit_text(text="Наши контактные данные", reply_markup=get_contacts_kb())
     await state.set_state(MainStates.contacts_state)
     
     
