@@ -41,4 +41,8 @@ async def back_to_menu(callback: types.CallbackQuery, state: FSMContext):
     await callback.message.edit_text(text_cfg["hello_text"], reply_markup=get_keyboard_menu())
     await state.set_state("menu_state")
     
+@router.callback_query(F.data == "back", StateFilter(MainStates.obj_info_state))
+async def back_to_menu(callback: types.CallbackQuery, state: FSMContext):
+    await callback.message.edit_text(text_cfg["hello_text"], reply_markup=get_keyboard_menu())
+    await state.set_state("menu_state")
     
