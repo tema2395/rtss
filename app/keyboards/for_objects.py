@@ -1,6 +1,6 @@
 from aiogram import types
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from bot_text.get_text import text_cfg
+from bot_text.config import text_cfg  # Импорт централизованной конфигурации
 
 def get_object_info_keyboard():
     builder = InlineKeyboardBuilder()

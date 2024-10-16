@@ -1,21 +1,21 @@
-import yaml
+import logging
+
 from aiogram import F, Router, types
 from aiogram.fsm.context import FSMContext
 from aiogram.filters.state import StateFilter
+
 from states import MainStates, ContactStates
 from keyboards.for_contacts import get_contacts_kb
 from keyboards.back import get_kb_back
 from keyboards.for_social import get_social_kb
 from keyboards.for_address import get_address_kb
+from bot_text.config import text_cfg  # Импорт централизованной конфигурации
 
 router = Router()
+logger = logging.getLogger(__name__)
 
-# Загрузка данных из YAML файла
-with open('text.yaml', 'r', encoding='utf-8') as file:
-    yaml_data = yaml.safe_load(file)
-
-contacts_texts = yaml_data['contacts']
-menu_texts = yaml_data['menu']
+contacts_texts = text_cfg['contacts']
+menu_texts = text_cfg['menu']
 
 @router.callback_query(F.data == "contacts_callback")
 async def main_object_info(callback: types.CallbackQuery, state: FSMContext):
